@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RoboApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body >
+    <header>
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                  <a class="navbar-brand" href="#">ROBOAPP</a>
+                  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                      <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Login</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Formulario</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link disabled">Ayuda</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </nav>
+        </div>
+    </header>
+
+    <section class="carrusel my-5">
+        <div id="carouselExampleCaptions" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="robo1.jpeg" class="rounded w-50" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Robo a mano armada</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="robo2.jpg" class="rounded w-50" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Robo en almacen</h5>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="robo3.jpeg" class="rounded w-50" alt="...">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Robo a vehiculo</h5>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+
+    <section class="formulario">
+        <h2 class="text-center my-5"> Formulario </h2>
+        <div class="container">
+        <div class="h-6 p-5 text-white border border-">
+            <h2>Datos Personales</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                    
+            <div class="mb-3">
+                <label for="textNom" class="form-label">Nombre</label>
+                <input type="text"
+                class="form-control" name="textNom" id="textNom" aria-describedby="helpId" placeholder="Ingrese Su Nombre">                
+            </div>
+            <div class="mb-3">
+                <label for="textApe" class="form-label">Apellido</label>
+                <input type="text"
+                class="form-control" name="textApe" id="textApe" aria-describedby="helpId" placeholder="Ingrese Su Apellido">        
+            </div>
+            <div class="mb-3">
+                <label for="textDoc" class="form-label">Documento</label>
+                <input type="text"
+                class="form-control" name="textDoc" id="textDoc" aria-describedby="helpId" placeholder="Ingrese Su Numero De Documento">                
+            </div>
+
+            <div class="mb-3">
+                <label for="textTel" class="form-label">Telefono</label>
+                <input type="text"
+                class="form-control" name="textTel" id="textTel" aria-describedby="helpId" placeholder="Ingrese Su Numero Telefonico">                
+            </div>
+            <div class="mb-3">
+                <label for="textDes" class="form-label">Descripcion</label>
+                <input type="text"
+                class="form-control" name="textDes" id="textDes" aria-describedby="helpId" placeholder="Describa El Suceso">                
+            </div>
+            <h2>Datos Estacion </h2>
+            <br>        
+            <div class="mb-3">
+                <label>Nombre de la estacion</label>
+                <select class="form-control" name="textNomE" id="textNomE" >
+                <option value = "" selected> Seleccionar </option>
+                {% for estaciones in estacion %}
+                <option value='{{estaciones[1]}}'> {{estaciones[1]}}</option>
+                {% endfor %}
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="textDir" class="form-label">Direccion: (No Obligatorio)</label>
+                <input type="text"
+                class="form-control" name="textDir" id="textDir" aria-describedby="helpId" placeholder="Ingrese La Direccion">        
+            </div>
+            <div class="mb-3">
+                <label>Clasificacion</label>
+                <select class="form-control" name="textCla" id="textCla" >
+                <option value = "" selected> Seleccionar </option>              
+                <option value="Hurto">Hurto</option>
+                <option value="Pelea">Pelea</option>
+                <option value="Via En Mal Estado">Via En Mal Estado</option>
+                <option value="Demora En Transporte">Demora En Transporte</option>
+                <option value="Buses De Trasmilenio En Mal Estado">Buses De Trasmilenio En Mal Estado</option>
+                <option value="Omicidio">Omicidio</option>
+                
+                </select>
+            </div>         
+            <div class="mb-3">
+                <label for="textCor" class="form-label">Correo Electronico</label>
+                <input type="email" class="form-control" name="textCor" id="textCor" aria-describedby="emailHelpId" placeholder="abc@mail.com">            
+            </div>
+            
+            <div class="mb-3">
+                <label for="textNot" class="form-label">Notificacion: Ingrese Si Hubo o No Un Agente de Policia O Servidor De Trasmilenio</label> 
+                <select class="form-control" name="textNot" id="textNot" >
+                <option value = "" selected> Seleccionar </option>              
+                <option value="Policia">Policia</option>
+                <option value="Celador De Trasmilenio">Celador De Trasmilenio</option>
+                <option value="Personal De Taquilla">Personal De Taquilla</option>
+                <option value="Aseadoras">Aseadoras</option>
+                <option value="No Se Notifico A Ninguna Persona">No Se Notifico A Ninguna Persona</option>              
+                </select>
+            </div> 
+            <div class="mb-3">
+                <label for="textFe" class="form-label">Ingrese La Fecha</label>
+                <input type="date" class="form-control" name="textFe" id="textFe" aria-describedby="helpId" placeholder="AAAA-MM-DD">                
+            </div>
+            
+            
+            <div class="mb-3">
+                <label for="textEvi" class="form-label">Evidencia</label>
+                <input type="file"
+                class="form-control" name="textEvi" id="textEvi" aria-describedby="helpId" placeholder="Seleccione un Archivo">                
+            </div>
+            
+
+            <button type="submit" class="btn btn-success"> ENVIAR FORMULARIO </button>          
+            
+
+            </form> 
+            
+        </div>
+    </section>
+
+    <section class="nosotros my-5">
+        <h2 class="text-center  my-5">  Quienes Somos</h2>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <p>¡Bienvenidos a nuestra página web! Somos un equipo de profesionales comprometidos en brindarle a 
+                    nuestros clientes la mejor experiencia en línea. Nos apasiona lo que hacemos y nos esforzamos por 
+                    ofrecer soluciones innovadoras y efectivas para satisfacer sus necesidades.</p>
+                    <p>Nuestra empresa se dedica a proporcionar servicios de alta calidad en diferentes áreas, 
+                    como diseño web, desarrollo de software, marketing digital, consultoría empresarial, 
+                    entre otros. Contamos con un equipo altamente capacitado y experimentado en cada una de estas áreas, 
+                    lo que nos permite ofrecer soluciones personalizadas y adaptadas a cada cliente.
+                    Además, estamos comprometidos con la satisfacción del cliente y nos aseguramos de ofrecer un 
+                    servicio excepcional y atención personalizada en todo momento. Estamos dispuestos a escuchar 
+                    sus necesidades y trabajar juntos para encontrar la mejor solución para su empresa.</p>
+                    <p>Nos enorgullece ser una empresa confiable y comprometida con la calidad, y esperamos 
+                    poder ser su socio en línea de confianza. ¡Gracias por visitarnos!</p>                                                            
+                </div>
+                <div class="col-6">
+                    <p>
+                        <img src="logo.png" alt="" srcset="">
+                    </p>                    
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="fotter">
+        <div class="reservado">
+            <footer class="text-center py-3">
+                &copy; ROBOAPP - Todos Los Derechos Son Reservados 2023
+            </footer>
+        </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous"></script>
+  </body>
+</html>
